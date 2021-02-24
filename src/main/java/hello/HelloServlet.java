@@ -77,12 +77,12 @@ public class HelloServlet extends HttpServlet {
         }
         
         String nome = request.getParameter("nome");
-
+        String sobrenome = request.getParameter("sobrenome");
         if(nome==null)
             nome = "Fulano";
-        
-        msg = msg+nome+"!";
-
+        if(sobrenome==null)
+            sobrenome = "de tal";
+        msg = msg + nome + ' ' + sobrenome+"!";
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
